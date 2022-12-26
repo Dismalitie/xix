@@ -1,25 +1,30 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("xix", "Synapse")
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = Library.CreateLib("xix v2.1 - Stable Realease", "Synapse")
 
 
 
 --tabs
-local xix = Window:NewTab("xix")
+local xixtab = Window:NewTab("xix")
 local MovementModifiers = Window:NewTab("Movement")
 local Utility = Window:NewTab("Utility")
 local Misc = Window:NewTab("Misc")
-local QuickScripts = Window:NewTab("Quick Scripts")
 
 --section
 local Movement = MovementModifiers:NewSection("Movement")
-local xix = MovementModifiers:NewSection("xix")
+local xix = xixtab:NewSection("xix")
 local Utilities = Utility:NewSection("Utilities")
 local MiscSection = Misc:NewSection("Misc")
-local QuickScript = Misc:NewSection("Quick Scripts")
 
 --xix
-xix:NewButton("Switch to beta", "Switches xix to xix beta", function()
-    
+xix:NewButton("Close GUI", "Closes the GUI", function()
+    Library:ToggleUI()
+    OrionLib:MakeNotification({
+        Name = "xix",
+        Content = "GUI closed.",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
 end)
 
 --movement
@@ -33,7 +38,12 @@ if _G.infinJumpStarted == nil then
 	_G.infinJumpStarted = true
 	
 	--Notifies readiness
-	game.StarterGui:SetCore("SendNotification", {Title="xix"; Text="Infinite jump ready!"; Duration=5;})
+	OrionLib:MakeNotification({
+        Name = "xix",
+        Content = "Infinite jump ready!",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
 
 	--The actual infinite jump
 	local plr = game:GetService('Players').LocalPlayer
@@ -58,7 +68,12 @@ if _G.infinJumpStarted == nil then
 	_G.infinJumpStarted = true
 	
 	--Notifies readiness
-	game.StarterGui:SetCore("SendNotification", {Title="xix"; Text="Infinite jump ready!"; Duration=5;})
+	OrionLib:MakeNotification({
+        Name = "xix",
+        Content = "Infinite jump ready!",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
 
 	--The actual infinite jump
 	local plr = game:GetService('Players').LocalPlayer
@@ -166,3 +181,5 @@ end)
 MiscSection:NewButton("High Hips", "You have never missed leg day.", function()
     game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = 10
 end)
+
+OrionLib:Init()
