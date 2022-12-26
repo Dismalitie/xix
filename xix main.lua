@@ -8,7 +8,8 @@ OrionLib:MakeNotification({
     Time = 5
 })
 
-
+_G.key = "beta96313"
+_G.run = (txt)
 --tabs
 local xixtab = Window:NewTab("xix")
 local MovementModifiers = Window:NewTab("Movement")
@@ -31,6 +32,10 @@ xix:NewButton("Close GUI", "Closes the GUI", function()
         Time = 5
     })
 end)
+xix:NewTextBox("Run Script", "Runs a script from xix.", function(txt)
+	(txt)
+end)
+
 
 --movement
 Movement:NewToggle("Infinite Jump", "Flying for spammers.", function(state)
