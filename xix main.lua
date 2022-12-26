@@ -1,7 +1,12 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = Library.CreateLib("xix v2.1 - Stable Realease", "Synapse")
-
+OrionLib:MakeNotification({
+    Name = "xix",
+    Content = "xix successfully loaded. Thank you for using xix.",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
 
 
 --tabs
