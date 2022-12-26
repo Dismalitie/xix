@@ -126,16 +126,14 @@ Utilities:NewButton("Reset Gravity", "Awwwwww. C'mon. Being in space is fun!", f
     workspace.Gravity = 100
     g = 100
 end)
-Utilities:NewToggle("Noclip", "Allows you to become a partial ghost.", function(state)
-    if state then
-        OrionLib:MakeNotification({
-            Name = "xix",
-            Content = "Noclip activated.",
-            Image = "rbxassetid://4483345998",
-            Time = 5
-        })
-        noclip = false
-        noclip = not noclip
+Utilities:NewButton("Noclip", "Allows you to become a partial ghost.", function()
+    OrionLib:MakeNotification({
+        Name = "xix",
+        Content = "Noclip activated. Toggle it by pressing E.",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+    noclip = false
 game:GetService('RunService').Stepped:connect(function()
 if noclip then
 game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
@@ -150,32 +148,7 @@ noclip = not noclip
 game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
 end
 end)
-    else
-        OrionLib:MakeNotification({
-            Name = "xix",
-            Content = "Noclip deactivated.",
-            Image = "rbxassetid://4483345998",
-            Time = 5
-        })
-        noclip = true
-        noclip = not noclip
-game:GetService('RunService').Stepped:connect(function()
-if noclip then
-game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
-end
 end)
-plr = game.Players.LocalPlayer
-mouse = plr:GetMouse()
-mouse.KeyDown:connect(function(key)
- 
-if key == "e" then
-noclip = not noclip
-game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
-end
-end)
-    end
-end)
-
 
 --misc
 MiscSection:NewToggle("Float", "Rise to the heavens!", function(state)
