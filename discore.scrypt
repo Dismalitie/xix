@@ -1,0 +1,29 @@
+import scrypt
+import xix
+import advanced
+
+<*> is ?parameter
+local:boot <safemode> boot active:true
+
+append line:(10-*) local identifier:"advanced"
+do load:from%string("cdn.discord.com/main/user/content((<content>))")
+pull:request("cdn.discord.com/main/user/content((<_content>))") identifier:"html"
+if pull:request("cdn.discord.com/main/user/content((<content>))") identifier:"html" == 1 do
+   callback:run(new file:scrypt in ((<_pull local:system.io ?is:branch.directory>))
+end
+for 1 in 1 persist do
+   if callback:from(@L9) == "invalid", "0", "1", "2" do
+      pull:request(((<_pull:?all>)))
+      callback:run(notification t:("Scrypt") d:("invalid pull?"+callback:from(@L9)
+   end
+end
+
+-- set to true if it doesnt work
+var:("safemode") == false
+
+
+if var:("safemode") == true do
+   replace line:(5-5) line.int:(2) replace.with("safemode")
+end
+
+index:index?all
