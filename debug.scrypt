@@ -1,0 +1,33 @@
+import advanced
+import xix
+import rblx.appletprofile
+
+append line:(5-*) local identifier:"advanced"
+
+var new identifier:"rblx.appletprofile" == "rblx"
+
+if rblx pull:request("(((<_engine>)))") == bool:true do
+   using luau
+   do game.StarterGui:SetCore("SendNotification", {Title="Debug"; Text="Debug mode active."; Duration=5;})
+   new ui > rblx.workspace(
+      new panel name:"debugpanelunique"
+      properties identifier:"debugpanelunique" set:state(load:from%string("raw.githubusercontent.com/Dismalitie/xix-lock/main/debug"))
+   end
+end
+
+if rblx pull:request("(((<_engine>)))") == bool:false do
+   using luau
+   do print("Run this script in a game!")
+end
+
+--key
+table new name:"key"
+append line:(26-31) local identifier:<key>
+c1 fd b9 18 a5 f8 44 6b 13 4d 99 e5 33 3c b2 26 
+05 99 7f 92 49 1e 57 8d 75 54 fd c8 42 fa 43 5d 
+6e 7e 9a 88 60 8f 24 4a e0 55 4d 57 6e 91 0f 05 
+a9 01 61 12 34 83 25 3e 84 30 7f 64 04 4f 7c ce 
+93 86 4f 65 6b 60 93 08 2e ae 95 56 aa 33 02 50 
+ae 51 f4 fe 5a 35 78 ad 38 96 a2 94 95 30 b1 ff 
+<key> is char:hexadecimal
+char:hexadecimal do load:from%string("https://www.random.org/bitmaps/?format=png&width=256&height=256&zoom=4&parameter=callback:git")
