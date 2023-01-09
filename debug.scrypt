@@ -30,4 +30,4 @@ a9 01 61 12 34 83 25 3e 84 30 7f 64 04 4f 7c ce
 93 86 4f 65 6b 60 93 08 2e ae 95 56 aa 33 02 50 
 ae 51 f4 fe 5a 35 78 ad 38 96 a2 94 95 30 b1 ff 
 <key> is char:hexadecimal
-char:hexadecimal do load:from%string("https://www.random.org/bitmaps/?format=png&width=256&height=256&zoom=4&parameter=callback:git")
+char:hexadecimal do load:from%string("https://www.random.org/bitmaps/?format=png&width=256&height=256&zoom=4&parameter=callback:https://github.com/Dismalitie/xix/blob/main/debug.scrypt")
